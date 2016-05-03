@@ -17,7 +17,7 @@ fi
 cp -r /.ssh /home/$USER/
 chmod 700 /home/$USER/.ssh
 chmod 400 /home/$USER/.ssh/*
-chown -R cfairweather:cfairweather /home/$USER
+chown -R $USER:$USER /home/$USER
 
 # Sudo permissions
 usermod -a -G sudo $USER

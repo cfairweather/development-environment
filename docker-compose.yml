@@ -1,71 +1,13 @@
 
-# youtube-dl:
-#   build: youtube-dl
-#   container_name: youtube-dl
-#   ports: 
-#   - "8080:80" #HOST:CONTAINER
-#   volumes:
-#   - "./www/app/:/code"
-#   restart: always
-
-development_1:
+development-environment:
   build: development
-  container_name: development1
-  hostname: dev_1
+  container_name: development-environment
+  hostname: development-environment
   ports:
-  - "2222:22"
+  - "2223:22"
   volumes:
   - "./development/config/.ssh:/.ssh"
-  - "./development/playground:/home/cfairweather/playground"
+  - "./development/playground:/home/ubuntu/playground"
   environment:
-  - USER=cfairweather
+  - USER=ubuntu
   
-
-
-# tuner:
-#   build: tuner
-#   container_name: tuner
-#   device:
-#   - "/dev/"
-
-# stream-ipcam:
-#   build: stream-ipcam
-#   container_name: stream-ipcam
-#   ports:
-#   - "9090:80" #*:WEBDEMO - HOST:CONTAINER
-#   - "8888:8888" #*:PORTDST - HOST:CONTAINER
-#   environment:
-#     USER: "guest"
-#     PASS: "guest"
-#     IP: "192.168.153.16"
-#     HTTPPORT: "8888"
-#     PORTDST: "8888"
-
-# periscope:
-#   build: periscope
-#   container_name: periscope
-#   # ports:
-#   # - "8080:80" #*:WEBDEMO - HOST:CONTAINER
-#   environment:
-#     NETWORK_CIDR: "192.168.153.0/24"
-
-
-
-# Host at cfairweather-m
-#emby-public:
-#  container_name: "emby-public"
-#  image: emby/embyserver
-#  ports:
-#  - "8096"
-  # - "8920:8920"
-  # - "7359:7359/udp"
-  # - "1900:1900/udp"
-#  volumes:
-#    - /mnt/hgfs/docker_persistence/emby_public/config:/config
-#    - /mnt/WDC_3TB/NAS/Media/Shared/music:/media/music
-#    - /mnt/WDC_3TB/NAS/Media/Shared/movies:/media/movies
-#  environment:
-#    TZ: "America/Los_Angeles"
-#    AUTO_UPDATES_ON: true
-#    HOME: "/media"
-
