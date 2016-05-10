@@ -1,6 +1,6 @@
 
 development-environment:
-  image: cfairweather/development-environment
+  build: development
   container_name: development-environment
   hostname: development-environment
   ports:
